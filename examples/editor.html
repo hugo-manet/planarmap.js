@@ -710,67 +710,72 @@ function OnColorChanged(selectedColor, colorPickerIndex) {
 }
 	
 d3.select("body").on("keydown",function(){
-	if( d3.event.keyCode == 46 ) // Delete
-	{
-		deleteEdge();
-	} else if( d3.event.keyCode == 90 && d3.event.ctrlKey ) // Ctrl+Z
-	{
-		performUndo();
-	} else if ( d3.event.keyCode == 69 ) // E
-	{
-		createEdge();
-	} else if ( d3.event.keyCode == 37 ) // left arrow
-	{
-		moveSelection(-1,0);
-	} else if ( d3.event.keyCode == 39 ) // right arrow
-	{
-		moveSelection(1,0);
-	} else if ( d3.event.keyCode == 38 ) // up arrow
-	{
-		moveSelection(0,1);
-	} else if ( d3.event.keyCode == 40 ) // down arrow
-	{
-		moveSelection(0,-1);
-	} else if ( d3.event.keyCode == 83 ) // S
-	{
-		splitVertexOrEdge();
-	} else if ( d3.event.keyCode == 77 ) // M
-	{
-		toggleMarker();
-	} else if ( d3.event.keyCode == 70 ) // F
-	{
-		fixVertices(true);
-	} else if ( !d3.event.shiftKey && d3.event.keyCode == 85 ) // U
-	{
-		setUnexplored(false);
-	} else if ( d3.event.shiftKey && d3.event.keyCode == 85 ) // Shift + U
-	{
-		setUnexplored(true);
-	} else if ( d3.event.keyCode == 82 ) // R
-	{
-		fixVertices(false);
-	} else if ( d3.event.keyCode == 68 ) // D
-	{
-		drawDual();
-	} else if ( d3.event.keyCode == 67 ) // C
-	{
-		startContractEdge();
-	} else if ( d3.event.keyCode == 71 ) // G
-	{
-		startGlueEdges();
-	} else if ( d3.event.keyCode == 72 ) // H
-	{
-		toggleShowControls();
-	} else if ( d3.event.keyCode == 80 ) // P
-	{
-		startPeelStep();
-	} else if ( d3.event.shiftKey && d3.event.keyCode >= 50 && d3.event.keyCode <= 57 ) // Shift + 2-9
-	{
-		createLoop(d3.event.keyCode-48);
-	} else if ( d3.event.keyCode >= 50 && d3.event.keyCode <= 57 ) // 2-9
-	{
-		createFace(d3.event.keyCode-48);
-	}
+  switch (d3.event.key) {
+    case "Delete":
+      deleteEdge();
+      break;
+    case "z":
+      if (d3.event.ctrlKey) {
+        performUndo();
+      }
+      break;
+    case "e":
+      createEdge();
+      break;
+    case "ArrowLeft":
+      moveSelection(-1,0);
+      break;
+    case "ArrowRight":
+      moveSelection(1,0);
+      break;
+    case "ArrowUp":
+      moveSelection(0,1);
+      break;
+    case "ArrowDown":
+      moveSelection(0,-1);
+      break;
+    case "s":
+      splitVertexOrEdge();
+      break;
+    case "m":
+      toggleMarker();
+      break;
+    case "f":
+      fixVertices(true);
+      break;
+    case "u":
+      setUnexplored(false);
+      break;
+    case "U":
+      setUnexplored(true);
+      break;
+    case "r":
+      fixVertices(false);
+      break;
+    case "d":
+      drawDual();
+      break;
+    case "c":
+      startContractEdge();
+      break;
+    case "g":
+      startGlueEdges();
+      break;
+    case "h":
+      toggleShowControls();
+      break;
+    case "p":
+      startPeelStep();
+      break;
+    default:
+      if ( d3.event.shiftKey && d3.event.keyCode >= 50 && d3.event.keyCode <= 57 ) // Shift + 2-9
+      {
+        createLoop(d3.event.keyCode-48);
+      } else if ( d3.event.keyCode >= 50 && d3.event.keyCode <= 57 ) // 2-9
+      {
+        createFace(d3.event.keyCode-48);
+      }
+    }
 });
 
 function copyAttributes(fromObject,toObject)

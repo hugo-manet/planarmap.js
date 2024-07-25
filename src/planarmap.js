@@ -134,16 +134,13 @@ CMap.OrientedEdge.prototype.clear = function(){
 }
 CMap.OrientedEdge.prototype.next = function(steps){
 	steps = defaultFor(steps,1);
-	var index = this.left().edgeIndex(this);
-	return this.left().edges[(index+steps)%this.left().edges.length];
+	var index = this.left().edgeIndex(this)+steps;
+  let length = this.left().edges.length;
+  return this.left().edges.at(index % length); // works with negative
 }
 CMap.OrientedEdge.prototype.prev = function(steps){
 	steps = defaultFor(steps,1);
-	var index = this.left().edgeIndex(this)-steps;
-	while( index < 0 ) {
-		index += this.left().edges.length;
-	}
-	return this.left().edges[index];
+	return this.next(-steps);
 }
 CMap.OrientedEdge.prototype.reverse = function(){
 	return new CMap.OrientedEdge(this.edge,!this.reversed);
@@ -188,8 +185,7 @@ CMap.Node.prototype.clear = function(){
 CMap.Node.prototype.edgeIndex = function(orientededge) {
 	for(var i=0;i<this.edges.length;i++)
 	{
-		if( this.edges[i].edge == orientededge.edge 
-			&& this.edges[i].reversed == orientededge.reversed )
+		if( this.edges[i].isEqual(orientededge))
 		{
 			return i;
 		}
