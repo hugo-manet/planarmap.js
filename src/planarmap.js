@@ -37,8 +37,7 @@ CMap.Face.prototype.clear = function() {
 CMap.Face.prototype.edgeIndex = function(orientededge) {
 	for(var i=0;i<this.edges.length;i++)
 	{
-		if( this.edges[i].edge == orientededge.edge 
-			&& this.edges[i].reversed == orientededge.reversed )
+		if( this.edges[i].isEqual(orientededge) )
 		{
 			return i;
 		}
