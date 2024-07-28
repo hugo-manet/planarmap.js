@@ -518,3 +518,54 @@ CMap.addPartialDualMap = function(planarmap,faces,intersectionnodeclass,dualedge
 		}
 	});
 }
+
+function leftGeodFrom(node, inputEdge, distanceLabel, markWithClass)
+{
+  let myDist = node.attr[distanceLabel];
+  if(myDist == 0)
+    return;
+  let edgeI = node.edgeIndex(inputEdge.reverse());
+  while (edgeI > (-node.edges.length)){
+    let candidateOE = node.edges.at(edgeI);
+    if (candidateOE.end().attr[distanceLabel] < myDist) {
+      candidateOE.edge.class[markWithClass] = true;
+      return leftGeodFrom(candidateOE.end(), candidateOE, distanceLabel, markWithClass);
+    }
+    edgeI--;
+  }
+  throw "No path found from node ".concat(node);
+}
+
+CMap.slice = function(planarMap, baseEdge, apexNode, doOpen, blueClass, redClass, baseClass, apexClass){
+  doOpen = defaultFor(doOpen, false);
+  blueClass = defaultFor(blueClass, "blueboundary");
+  redClass = defaultFor(redClass, "redboundary");
+  baseClass = defaultFor(baseClass, "slicebase");
+  apexClass = defaultFor(apexClass, "sliceapex");
+  distanceLabel = "distancefrom".concat(apexClass);
+  CMap.graphDistance(planarMap, apexNode, distanceLabel);
+
+  var nodeB = baseEdge.start,
+      nodeC = baseEdge.end;
+  if (nodeB.attr[distanceLabel] == nodeC.attr[distanceLabel]) {
+    leftGeodFrom(nodeC, baseEdge.getOriented(false), distanceLabel, blueClass);
+    leftGeodFrom(nodeB, baseEdge.getOriented(true), distanceLabel, blueClass);
+    if (doOpen)
+      ;
+    
+
+  }
+  if (nodeB.attr[distanceLabel] > nodeC.attr[distanceLabel]) {
+    leftGeodFrom(nodeC, baseEdge.getOriented(false), distanceLabel, blueClass);
+    if (doOpen)
+      ;
+  }
+  if (nodeB.attr[distanceLabel] < nodeC.attr[distanceLabel]) {
+    leftGeodFrom(nodeB, baseEdge.getOriented(true), distanceLabel, blueClass);
+    if (doOpen)
+      ;
+  }
+  apexNode.class[apexClass] = true;
+  baseEdge.class[baseClass] = true;
+
+}

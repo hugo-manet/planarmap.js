@@ -1,5 +1,3 @@
-
-
 var svg = d3.select("#pmap").append("svg")
 	.attr("id","pmapsvg")
 	.attr("width","100%")
@@ -13,7 +11,7 @@ var layoutupdater = CMap.LayoutUpdater()
 
 planarmap.singleEdgeMap();	
 	
-var view = CMap.View(planarmap,svg).zoom();
+var view = CMap.View(planarmap,svg).zoom().nodeLabelOffset([0,1.1]);
 view.nodeText(function(node){
 	return node.attr.id ;
 }).updateLayers();
@@ -461,6 +459,9 @@ d3.select("body").on("keydown",function(){
         performUndo();
       }
       break;
+    case "t":
+      sliceMap();
+      break;
     case "e":
       createEdge();
       break;
@@ -864,6 +865,28 @@ function splitVertexOrEdge()
 			view.updateLayers();
 			view.updatePositions();
 		}
+	}	
+}
+
+function sliceMap()
+{
+	var selection = view.getSelection();
+	if( selection.faces.length == 0 &&
+		selection.nodes.length == 1 &&
+		selection.edges.length == 1 &&
+    selection.corners.length == 0 )
+  {
+    let baseEdge = selection.edges[0];
+    let apexNode = selection.nodes[0];
+    addStateToUndoHistory();
+    view.clearSelection();
+    
+    CMap.slice(planarmap, baseEdge, apexNode);
+
+    view.nodeText(node => node.attr["distancefromsliceapex"]);
+		
+		view.updateLayers();
+		view.updatePositions();
 	}	
 }
 

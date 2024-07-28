@@ -58,10 +58,13 @@ svg .cornerLayer .cornerline {
 }
 svg text.label {
 	pointer-events: none;
+	font-family: Courier;
+	font-weight: bold;
+	font-size: 4;
+  fill:#ffffff;
 }
 svg circle.node {
 	fill: #404040;
-	stroke: none;
 }
 svg circle.node.dualnode {
 	fill: #20d020;
@@ -82,6 +85,15 @@ svg path.edge.loopedge {
 }
 svg path.face.loopface {
 	fill: #aaffaa;
+}
+svg path.edge.blueboundary {
+  stroke: #1133ff;
+}
+svg path.edge.redboundary {
+  stroke: #ff0010;
+}
+svg path.edge.slicebase {
+  stroke: #00cc11;
 }
 svg path.unexplored {
 	fill: #cccccc;
@@ -212,7 +224,7 @@ input.color {
 <body>
 	
 <div id="title">
-	<h1>Planarmap.js editor</h1>
+	<h1>Planarmap.js tester</h1>
 </div>
 <div class="editorhints">
 	<dl class="controls">
@@ -235,6 +247,7 @@ input.color {
 			<br /><img src="./images/splitedge.png" width=120px>
 			<br /><img src="./images/splitvertex.png" width=110px>
 		</dd>
+		<dt>T</dt><dd>Slice map (base edge + apex node)</dd>
 		<dt>C</dt><dd>Contract edge
 			<br /><img src="./images/contractedge.png" width=110px>
 		</dd>
