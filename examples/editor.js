@@ -447,6 +447,9 @@ d3.select("body").on("keydown",function(){
     case "e":
       createEdge();
       break;
+    case "o":
+      makeOuter();
+      break;
     case "ArrowLeft":
       moveSelection(-1,0);
       break;
@@ -683,6 +686,51 @@ function createEdge()
 			copyAttributes(edge.left,edge.right);
 			copyAttributes(edge1.edge,edge);
 		}
+		view.updateLayers();
+		view.updatePositions();
+	}	
+}
+
+function swapEdge(edge)
+{
+  var cornerend = edge.getOriented(!edge.left.layout.outer);
+  var cornerstart = cornerend.next();
+  var savedattributes = new CMap.Face();
+  if( edge.left.layout.outer)
+    copyAttributes(edge.right, savedattributes);
+  else
+    copyAttributes(edge.left, savedattributes);
+
+  comments = {};
+  comments.outer="left";
+  var newedge = planarmap.insertDiagonal(planarmap.outerface(),
+      [cornerstart,cornerend], comments);
+  copyAttributes(planarmap.outerface(), newedge.right);
+  copyAttributes(edge,newedge);
+  planarmap.removeEdge(edge);
+  copyAttributes(savedattributes, planarmap.outerface());
+  savedattributes.clear();
+  delete savedattributes;
+}
+function borderFaceToOuter(face)
+{
+
+}
+function makeOuter()
+{
+	var selection = view.getSelection();
+	if( selection.faces.length == 0 &&
+		selection.nodes.length == 0 &&
+		selection.edges.length == 1 &&
+    selection.corners.length == 0 )
+  {
+    var edge = selection.edges[0];
+    if( !edge.left.layout.outer && !edge.right.layout.outer) return;
+    addStateToUndoHistory();
+    view.clearSelection();
+    
+    swapEdge(edge);
+		
 		view.updateLayers();
 		view.updatePositions();
 	}	
