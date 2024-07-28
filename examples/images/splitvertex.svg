@@ -1,208 +1,165 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   width="100%"
-   height="100%"
-   viewBox="-37.76548 -15.248637 103.61191 31.176514"
-   id="svgcopy"
-   style="fill:#000000;stroke:none"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="splitvertex.svg">
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="998"
-     inkscape:window-height="516"
-     id="namedview4690"
-     showgrid="false"
-     inkscape:zoom="3.7050882"
-     inkscape:cx="59.572326"
-     inkscape:cy="26.2033"
-     inkscape:window-x="2624"
-     inkscape:window-y="506"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svgcopy"
-     fit-margin-top="1"
-     fit-margin-left="1"
-     fit-margin-bottom="1"
-     fit-margin-right="1" />
-  <metadata
-     id="metadata54">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs52">
-    <marker
-       refX="0"
-       refY="0"
-       orient="auto"
-       id="Arrow1Mend"
-       style="overflow:visible">
-      <path
-         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
-         transform="matrix(-0.4,0,0,-0.4,-4,0)"
-         id="path3897"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
-         inkscape:connector-curvature="0" />
-    </marker>
-  </defs>
-  <path
-     d="m -30.95464,-8.0810094 c -4.27794,4.8384635 -3.804101,10.8277853 1.145385,14.9651577 3.265489,-3.9033597 5.746654,-7.9696717 5.746654,-7.9696717 z"
-     id="path3112-7"
-     style="fill:#ff0000;stroke:none"
-     inkscape:connector-curvature="0"
-     inkscape:transform-center-x="5.0782175"
-     inkscape:transform-center-y="0.14966968" />
-  <path
-     d="M -24.312936,-0.98429599 -36.3009,-13.253657"
-     id="path3092-7"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0"
-     inkscape:transform-center-x="6.4194115"
-     inkscape:transform-center-y="-6.3708761" />
-  <path
-     d="M -24.312936,-0.98429599 -35.97887,14.463296"
-     id="path3096-9"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0"
-     inkscape:transform-center-x="6.2583964"
-     inkscape:transform-center-y="7.4876006" />
-  <path
-     d="m -18.005856,-8.0668404 c 4.481168,4.6508764 4.264183,10.6549933 -0.503632,15.0004739 -3.42961,-3.7599756 -6.08259,-7.71633359 -6.08259,-7.71633359 z"
-     id="path3112"
-     style="fill:#ff0000;stroke:none"
-     inkscape:connector-curvature="0" />
-  <jsondata
-     id="jsondata48">{&quot;nodes&quot;:{&quot;prefix&quot;:&quot;node&quot;,&quot;newUId&quot;:68,&quot;size&quot;:5,&quot;data&quot;:{&quot;node62&quot;:{&quot;edges&quot;:[{&quot;edge&quot;:&quot;edge104&quot;,&quot;reversed&quot;:false},{&quot;edge&quot;:&quot;edge105&quot;,&quot;reversed&quot;:false},{&quot;edge&quot;:&quot;edge106&quot;,&quot;reversed&quot;:false},{&quot;edge&quot;:&quot;edge108&quot;,&quot;reversed&quot;:false}],&quot;attr&quot;:{},&quot;class&quot;:{&quot;node&quot;:true},&quot;pos&quot;:{&quot;x&quot;:-0.28318128036976814,&quot;y&quot;:-0.18285183122016765}},&quot;node63&quot;:{&quot;edges&quot;:[{&quot;edge&quot;:&quot;edge104&quot;,&quot;reversed&quot;:true}],&quot;attr&quot;:{&quot;selected&quot;:false},&quot;class&quot;:{&quot;node&quot;:true},&quot;pos&quot;:{&quot;x&quot;:1.1357673779956254,&quot;y&quot;:0.31101800913356337}},&quot;node64&quot;:{&quot;edges&quot;:[{&quot;edge&quot;:&quot;edge105&quot;,&quot;reversed&quot;:true}],&quot;attr&quot;:{},&quot;class&quot;:{&quot;node&quot;:true},&quot;pos&quot;:{&quot;x&quot;:-1.6382739872348144,&quot;y&quot;:0.5124318400922947}},&quot;node65&quot;:{&quot;edges&quot;:[{&quot;edge&quot;:&quot;edge106&quot;,&quot;reversed&quot;:true}],&quot;attr&quot;:{&quot;selected&quot;:false},&quot;class&quot;:{&quot;node&quot;:true},&quot;pos&quot;:{&quot;x&quot;:-0.11790158874782243,&quot;y&quot;:-1.6483860876130056}},&quot;node67&quot;:{&quot;edges&quot;:[{&quot;edge&quot;:&quot;edge108&quot;,&quot;reversed&quot;:true}],&quot;attr&quot;:{},&quot;class&quot;:{&quot;node&quot;:true},&quot;pos&quot;:{&quot;x&quot;:0.5631287066959707,&quot;y&quot;:-0.715542553678133}}}},&quot;edges&quot;:{&quot;prefix&quot;:&quot;edge&quot;,&quot;newUId&quot;:109,&quot;size&quot;:4,&quot;data&quot;:{&quot;edge104&quot;:{&quot;start&quot;:&quot;node62&quot;,&quot;end&quot;:&quot;node63&quot;,&quot;left&quot;:&quot;face48&quot;,&quot;right&quot;:&quot;face48&quot;,&quot;attr&quot;:{&quot;leftcornerselected&quot;:false},&quot;layout&quot;:{&quot;vert&quot;:[]},&quot;class&quot;:{&quot;edge&quot;:true}},&quot;edge105&quot;:{&quot;start&quot;:&quot;node62&quot;,&quot;end&quot;:&quot;node64&quot;,&quot;left&quot;:&quot;face48&quot;,&quot;right&quot;:&quot;face48&quot;,&quot;attr&quot;:{&quot;leftcornerselected&quot;:false},&quot;layout&quot;:{&quot;vert&quot;:[]},&quot;class&quot;:{&quot;edge&quot;:true}},&quot;edge106&quot;:{&quot;start&quot;:&quot;node62&quot;,&quot;end&quot;:&quot;node65&quot;,&quot;left&quot;:&quot;face48&quot;,&quot;right&quot;:&quot;face48&quot;,&quot;attr&quot;:{&quot;leftcornerselected&quot;:false},&quot;layout&quot;:{&quot;vert&quot;:[]},&quot;class&quot;:{&quot;edge&quot;:true}},&quot;edge108&quot;:{&quot;start&quot;:&quot;node62&quot;,&quot;end&quot;:&quot;node67&quot;,&quot;left&quot;:&quot;face48&quot;,&quot;right&quot;:&quot;face48&quot;,&quot;attr&quot;:{},&quot;layout&quot;:{&quot;vert&quot;:[]},&quot;class&quot;:{&quot;edge&quot;:true}}}},&quot;faces&quot;:{&quot;prefix&quot;:&quot;face&quot;,&quot;newUId&quot;:49,&quot;size&quot;:1,&quot;data&quot;:{&quot;face48&quot;:{&quot;edges&quot;:[{&quot;edge&quot;:&quot;edge108&quot;,&quot;reversed&quot;:false},{&quot;edge&quot;:&quot;edge108&quot;,&quot;reversed&quot;:true},{&quot;edge&quot;:&quot;edge106&quot;,&quot;reversed&quot;:false},{&quot;edge&quot;:&quot;edge106&quot;,&quot;reversed&quot;:true},{&quot;edge&quot;:&quot;edge105&quot;,&quot;reversed&quot;:false},{&quot;edge&quot;:&quot;edge105&quot;,&quot;reversed&quot;:true},{&quot;edge&quot;:&quot;edge104&quot;,&quot;reversed&quot;:false},{&quot;edge&quot;:&quot;edge104&quot;,&quot;reversed&quot;:true}],&quot;attr&quot;:{},&quot;layout&quot;:{&quot;outer&quot;:true},&quot;class&quot;:{&quot;face&quot;:true},&quot;uid&quot;:&quot;face48&quot;}}},&quot;outerface&quot;:&quot;face48&quot;}</jsondata>
-  <path
-     d="M -24.337639,-0.69228339 -12.885951,-13.463634"
-     id="path3092"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0" />
-  <path
-     d="M -24.337639,-0.69228339 -12.021044,14.241695"
-     id="path3096"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0" />
-  <g
-     transform="matrix(0.79728087,-0.47716115,0.47716115,0.79728087,-24.337639,-0.69228339)"
-     id="g3100"
-     style="fill:#000000;stroke:none">
-    <circle
-       cx="0"
-       cy="0"
-       r="2"
-       id="circle3102"
-       style="fill:#404040;stroke:none"
-       d="M 2,0 C 2,1.1045695 1.1045695,2 0,2 -1.1045695,2 -2,1.1045695 -2,0 c 0,-1.1045695 0.8954305,-2 2,-2 1.1045695,0 2,0.8954305 2,2 z"
-       sodipodi:cx="0"
-       sodipodi:cy="0"
-       sodipodi:rx="2"
-       sodipodi:ry="2" />
-    <text
-       dx="2.8"
-       dy="-2"
-       id="text3104"
-       style="font-size:6px;fill:#000000;stroke:none" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.2" width="27.68mm" height="8.51mm" viewBox="0 0 2768 851" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xml:space="preserve">
+ <defs class="ClipPathGroup">
+  <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
+   <rect x="0" y="0" width="2768" height="851"/>
+  </clipPath>
+  <clipPath id="presentation_clip_path_shrink" clipPathUnits="userSpaceOnUse">
+   <rect x="2" y="0" width="2763" height="850"/>
+  </clipPath>
+ </defs>
+ <defs class="TextShapeIndex">
+  <g ooo:slide="id1" ooo:id-list="id3 id4 id5 id6 id7 id8 id9 id10 id11 id12 id13 id14 id15 id16 id17 id18 id19"/>
+ </defs>
+ <defs class="EmbeddedBulletChars">
+  <g id="bullet-char-template-57356" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 580,1141 L 1163,571 580,0 -4,571 580,1141 Z"/>
   </g>
-  <path
-     d="M -9.6905212,0.32089729 C 2.4374595,8.2699666 7.0770045,7.9884126 20.596655,-0.44796929"
-     id="path3114"
-     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-     inkscape:connector-curvature="0" />
-  <path
-     d="M 34.91368,-1.3047196 22.925717,-13.57408"
-     id="path3092-7-2"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0"
-     inkscape:transform-center-x="6.4194115"
-     inkscape:transform-center-y="-6.3708761" />
-  <path
-     d="M 34.91368,-1.3047196 23.247747,14.142873"
-     id="path3096-9-9"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0"
-     inkscape:transform-center-x="6.2583964"
-     inkscape:transform-center-y="7.4876006" />
-  <path
-     d="M 52.065251,-1.0127066 63.516939,-13.784057"
-     id="path3092-5"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0" />
-  <path
-     d="M 52.065251,-1.0127066 64.381846,13.921272"
-     id="path3096-0"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0" />
-  <g
-     transform="matrix(0.79728087,-0.47716115,0.47716115,0.79728087,34.888977,-1.0127066)"
-     id="g3100-4"
-     style="fill:#000000;stroke:none">
-    <circle
-       cx="0"
-       cy="0"
-       r="2"
-       id="circle3102-5"
-       style="fill:#404040;stroke:none"
-       d="M 2,0 C 2,1.1045695 1.1045695,2 0,2 -1.1045695,2 -2,1.1045695 -2,0 c 0,-1.1045695 0.8954305,-2 2,-2 1.1045695,0 2,0.8954305 2,2 z"
-       sodipodi:cx="0"
-       sodipodi:cy="0"
-       sodipodi:rx="2"
-       sodipodi:ry="2" />
-    <text
-       dx="2.8"
-       dy="-2"
-       id="text3104-9"
-       style="font-size:6px;fill:#000000;stroke:none" />
+  <g id="bullet-char-template-57354" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 8,1128 L 1137,1128 1137,0 8,0 8,1128 Z"/>
   </g>
-  <g
-     style="fill:#000000;stroke:none"
-     id="g4821"
-     transform="matrix(0.79728087,-0.47716115,0.47716115,0.79728087,52.065251,-1.0127066)">
-    <circle
-       sodipodi:ry="2"
-       sodipodi:rx="2"
-       sodipodi:cy="0"
-       sodipodi:cx="0"
-       d="M 2,0 C 2,1.1045695 1.1045695,2 0,2 -1.1045695,2 -2,1.1045695 -2,0 c 0,-1.1045695 0.8954305,-2 2,-2 1.1045695,0 2,0.8954305 2,2 z"
-       style="fill:#404040;stroke:none"
-       id="circle4823"
-       r="2"
-       cy="0"
-       cx="0" />
-    <text
-       style="font-size:6px;fill:#000000;stroke:none"
-       id="text4825"
-       dy="-2"
-       dx="2.8" />
+  <g id="bullet-char-template-10146" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 174,0 L 602,739 174,1481 1456,739 174,0 Z M 1358,739 L 309,1346 659,739 1358,739 Z"/>
   </g>
-  <path
-     d="m 34.883969,-0.96893869 17.187043,-0.018617"
-     id="path3092-5-6"
-     style="fill:none;stroke:#404040;stroke-width:0.92916065px"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
+  <g id="bullet-char-template-10132" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 2015,739 L 1276,0 717,0 1260,543 174,543 174,936 1260,936 717,1481 1274,1481 2015,739 Z"/>
+  </g>
+  <g id="bullet-char-template-10007" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 0,-2 C -7,14 -16,27 -25,37 L 356,567 C 262,823 215,952 215,954 215,979 228,992 255,992 264,992 276,990 289,987 310,991 331,999 354,1012 L 381,999 492,748 772,1049 836,1024 860,1049 C 881,1039 901,1025 922,1006 886,937 835,863 770,784 769,783 710,716 594,584 L 774,223 C 774,196 753,168 711,139 L 727,119 C 717,90 699,76 672,76 641,76 570,178 457,381 L 164,-76 C 142,-110 111,-127 72,-127 30,-127 9,-110 8,-76 1,-67 -2,-52 -2,-32 -2,-23 -1,-13 0,-2 Z"/>
+  </g>
+  <g id="bullet-char-template-10004" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 285,-33 C 182,-33 111,30 74,156 52,228 41,333 41,471 41,549 55,616 82,672 116,743 169,778 240,778 293,778 328,747 346,684 L 369,508 C 377,444 397,411 428,410 L 1163,1116 C 1174,1127 1196,1133 1229,1133 1271,1133 1292,1118 1292,1087 L 1292,965 C 1292,929 1282,901 1262,881 L 442,47 C 390,-6 338,-33 285,-33 Z"/>
+  </g>
+  <g id="bullet-char-template-9679" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 813,0 C 632,0 489,54 383,161 276,268 223,411 223,592 223,773 276,916 383,1023 489,1130 632,1184 813,1184 992,1184 1136,1130 1245,1023 1353,916 1407,772 1407,592 1407,412 1353,268 1245,161 1136,54 992,0 813,0 Z"/>
+  </g>
+  <g id="bullet-char-template-8226" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 346,457 C 273,457 209,483 155,535 101,586 74,649 74,723 74,796 101,859 155,911 209,963 273,989 346,989 419,989 480,963 531,910 582,859 608,796 608,723 608,648 583,586 532,535 482,483 420,457 346,457 Z"/>
+  </g>
+  <g id="bullet-char-template-8211" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M -4,459 L 1135,459 1135,606 -4,606 -4,459 Z"/>
+  </g>
+  <g id="bullet-char-template-61548" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 173,740 C 173,903 231,1043 346,1159 462,1274 601,1332 765,1332 928,1332 1067,1274 1183,1159 1299,1043 1357,903 1357,740 1357,577 1299,437 1183,322 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z"/>
+  </g>
+ </defs>
+ <g>
+  <g id="id2" class="Master_Slide">
+   <g id="bg-id2" class="Background"/>
+   <g id="bo-id2" class="BackgroundObjects"/>
+  </g>
+ </g>
+ <g class="SlideGroup">
+  <g>
+   <g id="container-id1">
+    <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+     <g class="Page">
+      <g class="com.sun.star.drawing.ClosedBezierShape">
+       <g id="id3">
+        <rect class="BoundingBox" stroke="none" fill="none" x="191" y="417" width="358" height="305"/>
+        <path fill="rgb(255,0,0)" stroke="none" d="M 548,614 C 441,756 298,757 191,614 277,504 370,418 370,418 L 548,614 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.ClosedBezierShape">
+       <g id="id4">
+        <rect class="BoundingBox" stroke="none" fill="none" x="187" y="101" width="360" height="301"/>
+        <path fill="rgb(255,0,0)" stroke="none" d="M 545,207 C 439,66 295,67 187,208 274,315 367,401 367,401 L 545,207 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id5">
+        <rect class="BoundingBox" stroke="none" fill="none" x="43" y="57" width="336" height="343"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 369,390 L 52,66"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id6">
+        <rect class="BoundingBox" stroke="none" fill="none" x="50" y="381" width="330" height="425"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 369,390 L 60,797"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id7">
+        <rect class="BoundingBox" stroke="none" fill="none" x="358" y="51" width="324" height="356"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 368,398 L 671,60"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id8">
+        <rect class="BoundingBox" stroke="none" fill="none" x="358" y="389" width="347" height="412"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 368,398 L 694,791"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.ClosedBezierShape">
+       <g id="id9">
+        <rect class="BoundingBox" stroke="none" fill="none" x="318" y="348" width="101" height="100"/>
+        <path fill="rgb(64,64,64)" stroke="none" d="M 411,373 C 415,380 417,388 418,397 418,406 415,414 411,422 406,429 401,435 394,439 386,444 378,446 369,446 361,446 351,445 344,440 336,436 330,430 326,423 321,416 319,407 319,399 319,390 320,381 325,374 329,366 336,360 343,356 351,351 359,349 368,349 376,349 385,351 392,355 400,359 406,365 411,373 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.OpenBezierShape">
+       <g id="id10">
+        <rect class="BoundingBox" stroke="none" fill="none" x="748" y="392" width="817" height="198"/>
+        <path fill="none" stroke="rgb(0,0,0)" stroke-width="26" stroke-linejoin="miter" d="M 756,425 C 1077,633 1199,626 1556,404"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id11">
+        <rect class="BoundingBox" stroke="none" fill="none" x="1393" y="389" width="187" height="145"/>
+        <path fill="rgb(0,0,0)" stroke="none" d="M 1466,459 L 1449,532 1578,390 1393,442 1466,459 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id12">
+        <rect class="BoundingBox" stroke="none" fill="none" x="1365" y="376" width="237" height="183"/>
+        <path fill="none" stroke="rgb(0,0,0)" stroke-width="14" stroke-linejoin="miter" d="M 1466,459 L 1449,532 1578,390 1393,442 1466,459 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id13">
+        <rect class="BoundingBox" stroke="none" fill="none" x="1609" y="48" width="337" height="344"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 1935,382 L 1618,57"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id14">
+        <rect class="BoundingBox" stroke="none" fill="none" x="1616" y="374" width="331" height="424"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 1935,382 L 1626,789"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id15">
+        <rect class="BoundingBox" stroke="none" fill="none" x="2378" y="43" width="324" height="355"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 2388,389 L 2691,52"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id16">
+        <rect class="BoundingBox" stroke="none" fill="none" x="2378" y="380" width="347" height="413"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 2388,389 L 2714,783"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.ClosedBezierShape">
+       <g id="id17">
+        <rect class="BoundingBox" stroke="none" fill="none" x="1885" y="339" width="100" height="100"/>
+        <path fill="rgb(64,64,64)" stroke="none" d="M 1976,364 C 1981,371 1983,380 1983,389 1983,397 1981,405 1977,413 1973,420 1967,426 1959,430 1952,435 1943,437 1935,437 1926,437 1918,435 1910,431 1903,427 1897,421 1892,414 1888,406 1885,399 1885,390 1885,381 1887,372 1891,365 1895,357 1901,352 1909,347 1916,343 1925,340 1933,340 1942,340 1950,342 1958,346 1965,351 1972,357 1976,364 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.ClosedBezierShape">
+       <g id="id18">
+        <rect class="BoundingBox" stroke="none" fill="none" x="2339" y="339" width="100" height="100"/>
+        <path fill="rgb(64,64,64)" stroke="none" d="M 2430,364 C 2435,371 2437,380 2437,389 2438,397 2435,405 2431,413 2427,420 2422,426 2414,430 2407,435 2398,437 2389,437 2380,437 2372,435 2364,431 2357,427 2351,421 2346,414 2342,406 2339,399 2339,390 2339,381 2341,372 2345,365 2350,357 2356,352 2363,347 2370,343 2379,340 2387,340 2396,340 2405,342 2412,346 2420,351 2426,357 2430,364 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id19">
+        <rect class="BoundingBox" stroke="none" fill="none" x="1934" y="377" width="456" height="27"/>
+        <path fill="none" stroke="rgb(64,64,64)" stroke-width="25" stroke-linejoin="miter" d="M 1934,390 L 2388,390"/>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
 </svg>
