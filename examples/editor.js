@@ -812,6 +812,20 @@ function makeOuter()
 		view.updateLayers();
 		view.updatePositions();
 	}	
+	if( selection.faces.length == 1 &&
+		selection.nodes.length == 0 &&
+		selection.edges.length == 0 &&
+    selection.corners.length == 0 )
+  {
+    var face = selection.faces[0];
+    addStateToUndoHistory();
+    view.clearSelection();
+    
+    faceToOuter(face);
+		
+		view.updateLayers();
+		view.updatePositions();
+	}	
 }
 
 function splitVertexOrEdge()
