@@ -584,50 +584,7 @@ function toggleShowControls()
 function moveSelection(alongface,alongvertex)
 {
 	var selection = view.getSelection();
-	if( selection.faces.length == 0 &&
-		selection.nodes.length == 0 &&
-		selection.edges.length == 0 &&
-		selection.corners.length == 0 )
-	{
-		view.addToSelection(getRandomElement(planarmap.outerface().edges));
-		view.updateLayers();
-	} else if( selection.faces.length == 1 &&
-		selection.nodes.length == 0 &&
-		selection.edges.length == 0 &&
-		selection.corners.length == 0 )
-	{
-		var selectcorner = getRandomElement(selection.faces[0].edges);
-		view.clearSelection();
-		view.addToSelection(selectcorner);
-		view.updateLayers();
-	} else if( selection.faces.length == 0 &&
-		selection.nodes.length == 0 &&
-		selection.edges.length == 0 &&
-		selection.corners.length == 1 )
-	{
-		var corner = selection.corners[0];
-		if( !d3.event.shiftKey )
-		{
-			view.clearSelection();
-		}
-		if( alongface == 1 )
-		{
-			view.addToSelection(corner.next());
-		}
-		if( alongface == -1 )
-		{
-			view.addToSelection(corner.prev());
-		}
-		if( alongvertex == -1 )
-		{
-			view.addToSelection(corner.reverse().next());
-		}
-		if( alongvertex == 1 )
-		{
-			view.addToSelection(corner.prev().reverse());
-		}		
-		view.updateLayers();
-	} else if( selection.faces.length == 0 &&
+  if( selection.faces.length == 0 &&
 		selection.nodes.length == 0 &&
 		selection.edges.length == 0 &&
 		selection.corners.length == 2 )
@@ -656,7 +613,53 @@ function moveSelection(alongface,alongvertex)
 			view.addToSelection(corner1.prev().reverse());
 		}		
 		view.updateLayers();
-	}	
+	}	else if( selection.corners.length >= 1 )
+	{
+		var corner = selection.corners.at(-1);
+		if( !d3.event.shiftKey )
+		{
+			view.clearSelection();
+		}
+		if( alongface == 1 )
+		{
+			view.addToSelection(corner.next());
+		}
+		if( alongface == -1 )
+		{
+			view.addToSelection(corner.prev());
+		}
+		if( alongvertex == -1 )
+		{
+			view.addToSelection(corner.reverse().next());
+		}
+		if( alongvertex == 1 )
+		{
+			view.addToSelection(corner.prev().reverse());
+		}		
+		view.updateLayers();
+	}	else if( selection.faces.length >= 1 )
+	{
+		var selectcorner = getRandomElement(getRandomElement(selection.faces).edges);
+		view.clearSelection();
+		view.addToSelection(selectcorner);
+		view.updateLayers();
+	}	else if( selection.edges.length >= 1 )
+	{
+		var selectcorner = getRandomElement(selection.edges).getOriented();
+		view.clearSelection();
+		view.addToSelection(selectcorner);
+		view.updateLayers();
+	}	else if( selection.nodes.length >= 1 )
+	{
+		var selectcorner = getRandomElement(getRandomElement(selection.nodes).edges);
+		view.clearSelection();
+		view.addToSelection(selectcorner);
+		view.updateLayers();
+	} else 
+  {
+		view.addToSelection(getRandomElement(planarmap.outerface().edges));
+		view.updateLayers();
+	}
 }
 
 function createEdge()
@@ -674,6 +677,7 @@ function createEdge()
 			var newedge = planarmap.insertEdgeNextTo(edge);
 			copyAttributes(edge.edge,newedge);
 			copyAttributes(newedge.start,newedge.end);
+      view.addToSelection(newedge);
 		} else if( selection.corners.length == 2 
 			&& selection.corners[0].left() ==
 			   selection.corners[1].left() )
@@ -685,6 +689,7 @@ function createEdge()
 			var edge = planarmap.insertDiagonal(edge1.left(),[edge1,edge2]);
 			copyAttributes(edge.left,edge.right);
 			copyAttributes(edge1.edge,edge);
+      view.addToSelection(edge);
 		}
 		view.updateLayers();
 		view.updatePositions();
@@ -762,17 +767,26 @@ function makeOuter()
     addStateToUndoHistory();
     view.clearSelection();
     
-    swapEdge(edge);
+    edge = swapEdge(edge);
+
+    view.addToSelection(edge);
 		
 		view.updateLayers();
 		view.updatePositions();
 	}	
-	if( selection.faces.length == 1 &&
+	if(( selection.faces.length == 1 &&
 		selection.nodes.length == 0 &&
 		selection.edges.length == 0 &&
-    selection.corners.length == 0 )
+    selection.corners.length == 0 ) ||
+    ( selection.faces.length == 0 &&
+    selection.nodes.length == 0 &&
+    selection.edges.length == 0 &&
+    selection.corners.length == 1 ))
   {
-    var face = selection.faces[0];
+    if (selection.faces.length == 1)
+      var face = selection.faces[0];
+    else
+      var face = selection.corners[0].left();
     addStateToUndoHistory();
     view.clearSelection();
     
@@ -797,6 +811,7 @@ function splitVertexOrEdge()
 		planarmap.splitEdge(splitedge);
 		copyAttributes(splitedge.edge,splitedge.next().edge);
 		copyAttributes(splitedge.start(),splitedge.end());
+    view.addToSelection(splitedge.next().edge);
 		view.updateLayers();
 		view.updatePositions();
 	} else if( selection.faces.length == 0 &&
@@ -814,6 +829,7 @@ function splitVertexOrEdge()
 			var newedge = planarmap.splitVertex([corner1,corner2]);
 			copyAttributes(newedge.getOriented().prev().edge,newedge);
 			copyAttributes(newedge.start,newedge.end);
+      view.addToSelection(newedge);
 			view.updateLayers();
 			view.updatePositions();
 		}
