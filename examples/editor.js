@@ -711,11 +711,44 @@ function swapEdge(edge)
   copyAttributes(savedattributes, planarmap.outerface());
   savedattributes.clear();
   delete savedattributes;
+  return newedge;
 }
 function borderFaceToOuter(face)
 {
-
+  let maxEdgeSegments = -1, maxLength = 0, bestEdge = null;
+  face.edges.forEach(oEdge => {
+    if( oEdge.right().layout.outer && (
+      oEdge.edge.layout.vert.length > maxEdgeSegments ||
+      (oEdge.edge.layout.vert.length == maxEdgeSegments && CMap.edgeLength(oEdge.edge) > maxLength))
+    ) {
+      bestEdge = oEdge.edge;
+      maxEdgeSegments = bestEdge.layout.vert.length;
+      maxLength = CMap.edgeLength(bestEdge);
+    }})
+  if (bestEdge == null)
+    throw "Face is not on border";
+  return swapEdge(bestEdge).left;
 }
+
+function faceToOuter(face, timeout)
+{
+  timeout = defaultFor(timeout, 200);
+  let distLabel = "distFromNewOuter";
+  CMap.dualGraphDistance(planarmap, face, distLabel);
+
+  let actuFace = planarmap.outerface();
+  timeoutActu = timeout/20;
+  while (actuFace.attr[distLabel] > 0) {
+    actuFace = actuFace.edges.find(orEdge => (orEdge.right().attr[distLabel] < actuFace.attr[distLabel])).right();
+    setTimeout(face => {
+      borderFaceToOuter(face); 
+      view.updateLayers();
+      view.updatePositions();
+    }, timeoutActu, actuFace);
+    timeoutActu += timeout;
+  }
+}
+
 function makeOuter()
 {
 	var selection = view.getSelection();
@@ -730,6 +763,20 @@ function makeOuter()
     view.clearSelection();
     
     swapEdge(edge);
+		
+		view.updateLayers();
+		view.updatePositions();
+	}	
+	if( selection.faces.length == 1 &&
+		selection.nodes.length == 0 &&
+		selection.edges.length == 0 &&
+    selection.corners.length == 0 )
+  {
+    var face = selection.faces[0];
+    addStateToUndoHistory();
+    view.clearSelection();
+    
+    faceToOuter(face);
 		
 		view.updateLayers();
 		view.updatePositions();
