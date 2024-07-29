@@ -584,6 +584,8 @@ CMap.PlanarMap = function (){
 		var indices = corners.map(function(ind){
 			return node.edgeIndex(ind);
 		});	
+    if (indices.length != 2 || indices[0] < 0 || indices[1] < 0)
+      throw "splitVertex on invalid corners";
 		var newnode = planarmap.newNode();
 		var edge = planarmap.newEdge(node,newnode,
 			corners[1].left(),corners[0].left());

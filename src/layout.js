@@ -282,7 +282,7 @@ CMap.LayoutUpdater = function() {
 			oredge.end().pos = angleSection(
 				vprev[1].pos,vprev[0].pos,
 				vnext[1].pos,1,0.5*targetLinkLength)[0];			
-			while( CMap.faceIsNonSimple(oredge.left()) || CMap.faceIsNonSimple(oredge.right()) )
+			while( oredge.end().edges.some(modifiedEdge => CMap.faceIsNonSimple(modifiedEdge.left())) )
 			{
 				oredge.end().pos = oredge.start().pos.plus(
 					oredge.end().pos.minus(oredge.start().pos)
