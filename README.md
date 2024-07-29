@@ -1,3 +1,9 @@
+## Disclaimer
+
+This small fork of Timothy Budd's project is (for now) for exploration purposes,
+adding a few personal tools to the editor,
+and (starting to) implement slice decompositions in this context.
+ 
 # Planarmap.js
 
 Planamap.js is a (very preliminary) javascript library that allows 
