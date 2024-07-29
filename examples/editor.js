@@ -460,6 +460,7 @@ d3.select("body").on("keydown",function(){
       }
       break;
     case "t":
+    case "T":
       sliceMap();
       break;
     case "e":
@@ -881,7 +882,7 @@ function sliceMap()
     addStateToUndoHistory();
     view.clearSelection();
     
-    CMap.slice(planarmap, baseEdge, apexNode);
+    CMap.slice(planarmap, baseEdge, apexNode, d3.event.shiftKey);
 
     view.nodeText(node => node.attr["distancefromsliceapex"]);
 		
