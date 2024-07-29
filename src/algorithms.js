@@ -523,17 +523,83 @@ function leftGeodFrom(node, inputEdge, distanceLabel, markWithClass)
 {
   let myDist = node.attr[distanceLabel];
   if(myDist == 0)
-    return;
+    return [];
   let edgeI = node.edgeIndex(inputEdge.reverse());
   while (edgeI > (-node.edges.length)){
     let candidateOE = node.edges.at(edgeI);
     if (candidateOE.end().attr[distanceLabel] < myDist) {
       candidateOE.edge.class[markWithClass] = true;
-      return leftGeodFrom(candidateOE.end(), candidateOE, distanceLabel, markWithClass);
+      return [candidateOE].concat(leftGeodFrom(candidateOE.end(), candidateOE, distanceLabel, markWithClass));
     }
     edgeI--;
   }
   throw "No path found from node ".concat(node);
+}
+
+function fuseFaces(planarMap, cornerA, cornerB){
+  let newEdge = planarMap.splitVertex([cornerA,cornerB]);
+  copyAttributes(newEdge.start,newEdge.end);
+  newEdge.end.attr[distanceLabel] = newEdge.start.attr[distanceLabel];
+  planarMap.removeEdge(newEdge);
+  view.updateLayers();
+  view.updatePositions();
+}
+
+function slicePath(planarMap, path, timeout, redClass, after){
+  path.forEach(edge => {
+    var newEdge = planarMap.insertDiagonal(edge.left(), [edge, edge.next()]);
+    newEdge.class[redClass] = true;
+  });
+  view.updateLayers();
+  view.updatePositions();
+  for(var iOE = 0; iOE < path.length - 1; iOE++)
+    setTimeout(fuseFaces, iOE*timeout, planarMap, path[iOE].next(), path[iOE+1]);
+  setTimeout(after, (path.length-1)*timeout);
+}
+
+
+CMap.openSliceR = function(planarMap, baseOEdge, path, blueClass, redClass, timeout){
+  timeout = defaultFor(timeout, 500);
+  var secondBase = planarMap.insertDiagonal(baseOEdge.right(),
+    [baseOEdge.reverse(), baseOEdge.reverse().next()]);
+  secondBase.class[blueClass] = true;
+  slicePath(planarMap, path, timeout, redClass, function() {
+    fuseFaces(planarMap, baseOEdge.reverse(),path[0]);
+    setTimeout(function() {
+      faceToOuter(baseOEdge.right());}, timeout);
+			view.updateLayers();
+			view.updatePositions();
+  });
+}
+
+CMap.openSliceS = function(planarMap, baseEdge, pathBA, pathCA, blueClass, redClass, timeout){
+  timeout = defaultFor(timeout, 500);
+  var commonPath = [];
+  while (pathBA.at(-1).isEqual(pathCA.at(-1))) {
+    commonPath.push(pathBA.pop());
+    pathCA.pop();
+  }
+  commonPath.reverse();
+  slicePath(planarMap, pathBA, timeout, redClass, () => { 
+    slicePath(planarMap, pathCA, timeout, redClass, () => {
+      slicePath(planarMap, commonPath, timeout, redClass, () => {
+        ends = [pathBA.at(-1).next(), pathCA.at(-1).next()];
+        fuseFaces(planarMap, ends[0], ends[1]);
+        if (commonPath.length != 0) {
+          end = ends[0];
+          if (!(end.start() == commonPath[0].start()))
+            end = ends[1];
+          setTimeout(fuseFaces, timeout, planarMap, end, commonPath[0]);
+          timeout *= 2;
+        }
+        setTimeout(function(){
+          faceToOuter(ends[0].left());
+          view.updateLayers();
+          view.updatePositions();
+        }, timeout);
+      });
+    });
+  });
 }
 
 CMap.slice = function(planarMap, baseEdge, apexNode, doOpen, blueClass, redClass, baseClass, apexClass){
@@ -548,22 +614,22 @@ CMap.slice = function(planarMap, baseEdge, apexNode, doOpen, blueClass, redClass
   var nodeB = baseEdge.start,
       nodeC = baseEdge.end;
   if (nodeB.attr[distanceLabel] == nodeC.attr[distanceLabel]) {
-    leftGeodFrom(nodeC, baseEdge.getOriented(false), distanceLabel, blueClass);
-    leftGeodFrom(nodeB, baseEdge.getOriented(true), distanceLabel, blueClass);
+    var CA = leftGeodFrom(nodeC, baseEdge.getOriented(false), distanceLabel, blueClass);
+    var BA = leftGeodFrom(nodeB, baseEdge.getOriented(true), distanceLabel, blueClass);
     if (doOpen)
-      ;
+      CMap.openSliceS(planarMap, baseEdge, BA, CA, blueClass, redClass);
     
 
   }
   if (nodeB.attr[distanceLabel] > nodeC.attr[distanceLabel]) {
-    leftGeodFrom(nodeC, baseEdge.getOriented(false), distanceLabel, blueClass);
+    var CA = leftGeodFrom(nodeC, baseEdge.getOriented(false), distanceLabel, blueClass);
     if (doOpen)
-      ;
+      CMap.openSliceR(planarMap, baseEdge.getOriented(false), CA, blueClass, redClass);
   }
   if (nodeB.attr[distanceLabel] < nodeC.attr[distanceLabel]) {
-    leftGeodFrom(nodeB, baseEdge.getOriented(true), distanceLabel, blueClass);
+    var BA = leftGeodFrom(nodeB, baseEdge.getOriented(true), distanceLabel, blueClass);
     if (doOpen)
-      ;
+      CMap.openSliceR(planarMap, baseEdge.getOriented(true), BA, blueClass, redClass);
   }
   apexNode.class[apexClass] = true;
   baseEdge.class[baseClass] = true;
