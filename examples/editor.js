@@ -396,6 +396,23 @@ function selectionNodeSize(size)	{
 	view.updateLayers();
 }
 selectpanel.addSlider("Node size","nodesize", selectionNodeSize, 0.2, 3.0, 0.1 );
+function selectionStrokeDash(length)	{
+	if (!arguments.length) {
+		return 1.0;//view.getSelection()
+	}
+	view.getSelection().edges.forEach(function(e){
+		if( !e.attr.style ) 
+		{
+			e.attr["style"] = {};
+		}
+    if (length == 0.0)
+      e.attr.style["stroke-dasharray"] = '';
+    else
+      e.attr.style["stroke-dasharray"] = (length*3) + "," + (length*2);
+	});
+  view.updateLayers();
+}
+selectpanel.addSlider("Stroke dash","strokedash", selectionStrokeDash, 0.0, 5.0, 0.1 );
 	
 function OnColorChanged(selectedColor, colorPickerIndex) {
 	addStateToUndoHistory();
